@@ -166,7 +166,7 @@ cred.TextSize = 14.000
 
 cred.MouseButton1Click:Connect(function()
 	credits.Visible = true
-end)
+end) 
 
 hot.Name = "hot"
 hot.Parent = top
