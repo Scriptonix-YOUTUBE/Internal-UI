@@ -80,6 +80,13 @@ main.Size = UDim2.new(0, 489, 0, 242)
 main.Active = true
 main.Selectable = true
 main.Draggable = true
+main.Visible = false
+
+game:GetService('UserInputService').InputBegan:Connect(function(inp)
+	if inp.KeyCode == Enum.KeyCode.Insert then
+		main.Visible = true
+	end
+end)
 
 top.Name = "top"
 top.Parent = main
