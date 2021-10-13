@@ -1,0 +1,857 @@
+
+
+local krnl = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local top = Instance.new("Frame")
+local x = Instance.new("TextButton")
+local krnltext = Instance.new("TextLabel")
+local image = Instance.new("ImageLabel")
+local bar = Instance.new("Frame")
+local cred = Instance.new("TextButton")
+local hot = Instance.new("TextButton")
+local middle = Instance.new("Frame")
+local executor = Instance.new("ScrollingFrame")
+local execution = Instance.new("TextBox")
+local bottom = Instance.new("Frame")
+local execute = Instance.new("TextButton")
+local clear = Instance.new("TextButton")
+local bottomofbottom = Instance.new("Frame")
+local credits = Instance.new("Frame")
+local topcred = Instance.new("Frame")
+local topx = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local scriptt = Instance.new("ImageButton")
+local hotscriots = Instance.new("Frame")
+local topish = Instance.new("Frame")
+local x_2 = Instance.new("TextButton")
+local middish = Instance.new("ScrollingFrame")
+local darkdex = Instance.new("TextButton")
+local remote = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local inf = Instance.new("TextButton")
+local cmd = Instance.new("TextButton")
+local audio = Instance.new("TextButton")
+local chat = Instance.new("TextButton")
+local roll = Instance.new("TextButton")
+local emote = Instance.new("TextButton")
+local walls = Instance.new("TextButton")
+local back = Instance.new("TextButton")
+local yeet = Instance.new("TextButton")
+
+local JoinServer = function(Code)
+	return syn.request({
+		Url = 'http://127.0.0.1:6463/rpc?v=1',
+		Method = 'POST',
+		Body = HttpService:JSONEncode({
+			cmd = 'INVITE_BROWSER',
+			args = {
+				code = Code
+			},
+
+			nonce = lower(HttpService:GenerateGUID(false))
+		}),
+		Headers = {
+			['Content-Type'] = 'application/json',
+			['Origin'] = 'https://discord.com'
+		}
+	})
+end
+
+function replace_char(pos, str, r)
+	return str:sub(1, pos-1) .. r .. str:sub(pos+1)
+end
+
+krnl.Name = "krnl"
+krnl.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+krnl.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+krnl.ResetOnSpawn = false
+
+main.Name = "main"
+main.Parent = krnl
+main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.204475313, 0, 0.271771759, 0)
+main.Size = UDim2.new(0, 489, 0, 242)
+main.Active = true
+main.Selectable = true
+main.Draggable = true
+
+top.Name = "top"
+top.Parent = main
+top.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+top.BorderColor3 = Color3.fromRGB(27, 42, 53)
+top.BorderSizePixel = 0
+top.Position = UDim2.new(0.00406632666, 0, 0, 0)
+top.Size = UDim2.new(0, 484, 0, 40)
+
+x.Name = "x"
+x.Parent = top
+x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+x.BackgroundTransparency = 1.000
+x.BorderSizePixel = 0
+x.Position = UDim2.new(0.946280956, 0, 0.075000003, 0)
+x.Size = UDim2.new(0, 26, 0, 26)
+x.Font = Enum.Font.Sarpanch
+x.Text = "X"
+x.TextColor3 = Color3.fromRGB(255, 255, 255)
+x.TextScaled = true
+x.TextSize = 14.000
+x.TextWrapped = true
+
+x.MouseButton1Click:Connect(function()
+	main.Visible = false
+end)
+
+krnltext.Name = "krnltext"
+krnltext.Parent = top
+krnltext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+krnltext.BackgroundTransparency = 1.000
+krnltext.BorderSizePixel = 0
+krnltext.Position = UDim2.new(0.359504133, 0, 0.075000003, 0)
+krnltext.Size = UDim2.new(0, 136, 0, 19)
+krnltext.Font = Enum.Font.SourceSans
+krnltext.Text = "KRNL"
+krnltext.TextColor3 = Color3.fromRGB(255, 255, 255)
+krnltext.TextScaled = true
+krnltext.TextSize = 14.000
+krnltext.TextWrapped = true
+
+image.Name = "image"
+image.Parent = top
+image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+image.BackgroundTransparency = 1.000
+image.BorderSizePixel = 0
+image.Position = UDim2.new(0, 0, 0.075000003, 0)
+image.Size = UDim2.new(0, 23, 0, 23)
+image.Image = "rbxassetid://5869622434"
+
+bar.Name = "bar"
+bar.Parent = top
+bar.BackgroundColor3 = Color3.fromRGB(41, 116, 255)
+bar.BorderSizePixel = 0
+bar.Position = UDim2.new(-0.00413223123, 0, 0, 0)
+bar.Size = UDim2.new(0, 489, 0, 2)
+
+cred.Name = "cred"
+cred.Parent = top
+cred.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cred.BackgroundTransparency = 1.000
+cred.Position = UDim2.new(0.0599173568, 0, 0.550000012, 0)
+cred.Size = UDim2.new(0, 76, 0, 15)
+cred.Font = Enum.Font.SourceSans
+cred.Text = "Credits"
+cred.TextColor3 = Color3.fromRGB(255, 255, 255)
+cred.TextSize = 14.000
+
+cred.MouseButton1Click:Connect(function()
+	credits.Visible = true
+end)
+
+hot.Name = "hot"
+hot.Parent = top
+hot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hot.BackgroundTransparency = 1.000
+hot.Position = UDim2.new(0.247933894, 0, 0.550000012, 0)
+hot.Size = UDim2.new(0, 76, 0, 15)
+hot.Font = Enum.Font.SourceSans
+hot.Text = "Hot-Scripts"
+hot.TextColor3 = Color3.fromRGB(255, 255, 255)
+hot.TextSize = 14.000
+
+hot.MouseButton1Click:Connect(function()
+	hotscriots.Visible = true
+end)
+
+middle.Name = "middle"
+middle.Parent = main
+middle.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+middle.BorderSizePixel = 0
+middle.Position = UDim2.new(0.00406632666, 0, 0.190082639, 0)
+middle.Size = UDim2.new(0, 484, 0, 152)
+
+executor.Name = "executor"
+executor.Parent = middle
+executor.Active = true
+executor.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+executor.BackgroundTransparency = 1.000
+executor.Size = UDim2.new(0, 482, 0, 152)
+executor.CanvasSize = UDim2.new(0, 0, 10, 0)
+
+execution.Name = "execution"
+execution.Parent = executor
+execution.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+execution.BorderColor3 = Color3.fromRGB(53, 53, 53)
+execution.Size = UDim2.new(0.963, 0, 1, 0)
+execution.ZIndex = 99999
+execution.ClearTextOnFocus = false
+execution.Font = Enum.Font.SourceSans
+execution.Text = "print('Hello, world!')\n"
+execution.TextColor3 = Color3.fromRGB(255, 255, 255)
+execution.TextSize = 14.000
+execution.TextWrapped = true
+execution.TextXAlignment = Enum.TextXAlignment.Left
+execution.TextYAlignment = Enum.TextYAlignment.Top
+
+execution.FocusLost:Connect(function(inp)
+	if inp then
+		execution.Text = execution.Text .. '\n'
+		execution:ReleaseFocus()
+		execution:CaptureFocus()
+	end
+end)
+
+bottom.Name = "bottom"
+bottom.Parent = main
+bottom.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+bottom.BackgroundTransparency = 1.000
+bottom.BorderSizePixel = 0
+bottom.Position = UDim2.new(0.00406626426, 0, 0.84710741, 0)
+bottom.Size = UDim2.new(0, 484, 0, 37)
+
+execute.Name = "execute"
+execute.Parent = bottom
+execute.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+execute.BorderSizePixel = 0
+execute.Position = UDim2.new(0, 0, -0.0250000004, 0)
+execute.Size = UDim2.new(0, 112, 0, 35)
+execute.Font = Enum.Font.SourceSans
+execute.Text = "EXECUTE"
+execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+execute.TextSize = 23.000
+execute.TextWrapped = true
+
+execute.MouseButton1Click:Connect(function()
+	local scr = execution.Text
+	loadstring(scr)()
+end)
+
+clear.Name = "clear"
+clear.Parent = bottom
+clear.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+clear.BorderSizePixel = 0
+clear.Position = UDim2.new(0.247933879, 0, -0.0250000004, 0)
+clear.Size = UDim2.new(0, 112, 0, 35)
+clear.Font = Enum.Font.SourceSans
+clear.Text = "CLEAR"
+clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+clear.TextSize = 23.000
+clear.TextWrapped = true
+
+clear.MouseButton1Click:Connect(function()
+	execution.Text = ''
+end)
+
+bottomofbottom.Name = "bottomofbottom"
+bottomofbottom.Parent = bottom
+bottomofbottom.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+bottomofbottom.BorderSizePixel = 0
+bottomofbottom.Position = UDim2.new(0.495867759, 0, -0.0270270277, 0)
+bottomofbottom.Size = UDim2.new(0, 244, 0, 35)
+
+credits.Name = "credits"
+credits.Parent = krnl
+credits.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+credits.BorderSizePixel = 0
+credits.Position = UDim2.new(0.700712562, 0, 0.346405238, 0)
+credits.Size = UDim2.new(0, 297, 0, 165)
+credits.Visible = false
+credits.Active = true
+credits.Selectable = true
+credits.Draggable = true
+
+topcred.Name = "topcred"
+topcred.Parent = credits
+topcred.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+topcred.BorderColor3 = Color3.fromRGB(27, 42, 53)
+topcred.BorderSizePixel = 0
+topcred.Position = UDim2.new(-0.00172645238, 0, -0.00053341029, 0)
+topcred.Size = UDim2.new(0, 297, 0, 29)
+
+topx.Name = "topx"
+topx.Parent = topcred
+topx.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+topx.BackgroundTransparency = 1.000
+topx.Position = UDim2.new(0.902356863, 0, 0, 0)
+topx.Size = UDim2.new(0, 29, 0, 29)
+topx.Font = Enum.Font.Sarpanch
+topx.Text = "X"
+topx.TextColor3 = Color3.fromRGB(255, 255, 255)
+topx.TextScaled = true
+topx.TextSize = 14.000
+topx.TextWrapped = true
+
+topx.MouseButton1Click:Connect(function()
+	credits.Visible = false
+end)
+
+TextLabel.Parent = credits
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.464646459, 0, 0.212121218, 0)
+TextLabel.Size = UDim2.new(0, 151, 0, 21)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Scriptonix UI Image"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_2.Parent = credits
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.464646459, 0, 0.339393944, 0)
+TextLabel_2.Size = UDim2.new(0, 151, 0, 21)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Camtic"
+TextLabel_2.TextColor3 = Color3.fromRGB(134, 134, 134)
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_3.Parent = credits
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.464646459, 0, 0.466666669, 0)
+TextLabel_3.Size = UDim2.new(0, 151, 0, 21)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "UI Make Over"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_4.Parent = credits
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.464646459, 0, 0.593939424, 0)
+TextLabel_4.Size = UDim2.new(0, 151, 0, 21)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "Scriptonix"
+TextLabel_4.TextColor3 = Color3.fromRGB(134, 134, 134)
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_5.Parent = credits
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.464646459, 0, 0.721212149, 0)
+TextLabel_5.Size = UDim2.new(0, 151, 0, 21)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "Credits"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_6.Parent = credits
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.464646459, 0, 0.848484874, 0)
+TextLabel_6.Size = UDim2.new(0, 151, 0, 21)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = "Loot"
+TextLabel_6.TextColor3 = Color3.fromRGB(134, 134, 134)
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+scriptt.Name = "script"
+scriptt.Parent = credits
+scriptt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+scriptt.Position = UDim2.new(0.0235690232, 0, 0.212121218, 0)
+scriptt.Size = UDim2.new(0, 123, 0, 123)
+scriptt.Image = "http://www.roblox.com/asset/?id=7726826241"
+
+scriptt.MouseButton1Click:Connect(function()
+	JoinServer('vAdr59vcys')
+end)
+
+hotscriots.Name = "hotscriots"
+hotscriots.Parent = krnl
+hotscriots.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+hotscriots.BorderSizePixel = 0
+hotscriots.Position = UDim2.new(0.700712562, 0, 0.346405238, 0)
+hotscriots.Size = UDim2.new(0, 164, 0, 243)
+hotscriots.Visible = false
+hotscriots.Active = true
+hotscriots.Selectable = true
+hotscriots.Draggable = true
+
+topish.Name = "topish"
+topish.Parent = hotscriots
+topish.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+topish.BorderSizePixel = 0
+topish.Position = UDim2.new(-0.000506889541, 0, 0.000726142549, 0)
+topish.Size = UDim2.new(0, 164, 0, 32)
+
+x_2.Name = "x"
+x_2.Parent = topish
+x_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+x_2.BackgroundTransparency = 1.000
+x_2.BorderSizePixel = 0
+x_2.Position = UDim2.new(0.793842196, 0, -0.0321426392, 0)
+x_2.Size = UDim2.new(0, 33, 0, 33)
+x_2.Font = Enum.Font.Sarpanch
+x_2.Text = "X"
+x_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+x_2.TextScaled = true
+x_2.TextSize = 14.000
+x_2.TextWrapped = true
+
+x_2.MouseButton1Click:Connect(function()
+	hotscriots.Visible = false
+end)
+
+middish.Name = "middish"
+middish.Parent = hotscriots
+middish.Active = true
+middish.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+middish.BackgroundTransparency = 1.000
+middish.Position = UDim2.new(0, 0, 0.160493821, 0)
+middish.Size = UDim2.new(0, 163, 0, 204)
+middish.CanvasSize = UDim2.new(0, 0, 1.10000002, 0)
+
+darkdex.Name = "darkdex"
+darkdex.Parent = middish
+darkdex.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+darkdex.Size = UDim2.new(0, 145, 0, 19)
+darkdex.Font = Enum.Font.SourceSans
+darkdex.Text = "DarkDex"
+darkdex.TextColor3 = Color3.fromRGB(255, 255, 255)
+darkdex.TextScaled = true
+darkdex.TextSize = 14.000
+darkdex.TextWrapped = true
+
+darkdex.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4',true))()
+end)
+
+remote.Name = "remote"
+remote.Parent = middish
+remote.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+remote.Size = UDim2.new(0, 145, 0, 19)
+remote.Font = Enum.Font.SourceSans
+remote.Text = "Remote Spy"
+remote.TextColor3 = Color3.fromRGB(255, 255, 255)
+remote.TextScaled = true
+remote.TextSize = 14.000
+remote.TextWrapped = true
+
+remote.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/superdude914/scripts/master/remotespy.lua',true))()
+end)
+
+UIGridLayout.Parent = middish
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 5)
+UIGridLayout.CellSize = UDim2.new(0, 145, 0, 19)
+
+inf.Name = "inf"
+inf.Parent = middish
+inf.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+inf.Size = UDim2.new(0, 145, 0, 19)
+inf.Font = Enum.Font.SourceSans
+inf.Text = "Infinite Yield"
+inf.TextColor3 = Color3.fromRGB(255, 255, 255)
+inf.TextScaled = true
+inf.TextSize = 14.000
+inf.TextWrapped = true
+
+inf.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
+end)
+
+cmd.Name = "cmd"
+cmd.Parent = middish
+cmd.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+cmd.Size = UDim2.new(0, 145, 0, 19)
+cmd.Font = Enum.Font.SourceSans
+cmd.Text = "CMD-X"
+cmd.TextColor3 = Color3.fromRGB(255, 255, 255)
+cmd.TextScaled = true
+cmd.TextSize = 14.000
+cmd.TextWrapped = true
+
+cmd.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+audio.Name = "audio"
+audio.Parent = middish
+audio.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+audio.Size = UDim2.new(0, 145, 0, 19)
+audio.Font = Enum.Font.SourceSans
+audio.Text = "Audio Spy"
+audio.TextColor3 = Color3.fromRGB(255, 255, 255)
+audio.TextScaled = true
+audio.TextSize = 14.000
+audio.TextWrapped = true
+
+audio.MouseButton1Click:Connect(function()
+	--[[
+    Made by timothytheawesome (Scriptonix#6957).
+    (Much appreciated if you give me credit if you use this!)
+-]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	print('Audio Spy loaded!')
+
+
+	local l = game.Players.LocalPlayer
+
+	local s = {game:GetService'ServerStorage',game:GetService'ServerScriptService',workspace,game:GetService'SoundService',l.PlayerGui,l.PlayerScripts}
+
+
+	function sound(t,se)
+		local id = tostring(t.SoundId):gsub('http://www.roblox.com/asset/',''):gsub('rbxasseti',''):sub(5)
+
+		if t and se and id and id ~= '' then
+			local m = t:FindFirstAncestorWhichIsA'Model'
+
+			if m and m:FindFirstChild'HumanoidRootPart' then
+				m = m.Name
+			else
+				m = se.Name
+			end
+			print(id .. ": " .. m)
+
+		end
+	end
+
+	function soundcheck(t,se)
+		if t:IsA'Sound' and t.Parent.Name ~= 'HumanoidRootPart' then
+			local id = t.SoundId
+
+			local m = t:FindFirstAncestorWhichIsA'Model'
+			if m then
+				m.Archivable = true
+			end
+			t.Changed:Connect(function()
+				if t.SoundId ~= id then
+					id = t.SoundId
+					sound(t,se)
+				end
+			end)
+			sound(t,se)
+		end
+	end
+
+	function check(v,se)
+		for _, t in pairs(v:GetChildren()) do
+			soundcheck(t,v)
+			if #t:GetChildren() > 0 then
+				check(t,se)
+			end
+		end
+		soundcheck(v,se)
+		v.ChildAdded:Connect(function(d)
+			check(d,se)
+		end)
+	end
+
+
+	for _, v in pairs(s) do
+		check(v,v)
+	end
+end)
+
+chat.Name = "chat"
+chat.Parent = middish
+chat.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+chat.Size = UDim2.new(0, 145, 0, 19)
+chat.Font = Enum.Font.SourceSans
+chat.Text = "Chat GUI"
+chat.TextColor3 = Color3.fromRGB(255, 255, 255)
+chat.TextScaled = true
+chat.TextSize = 14.000
+chat.TextWrapped = true
+
+chat.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Scriptonix-YOUTUBE/Roblox-Chat/main/Code",true))()
+end)
+
+roll.Name = "roll"
+roll.Parent = middish
+roll.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+roll.Size = UDim2.new(0, 145, 0, 19)
+roll.Font = Enum.Font.SourceSans
+roll.Text = "Roll"
+roll.TextColor3 = Color3.fromRGB(255, 255, 255)
+roll.TextScaled = true
+roll.TextSize = 14.000
+roll.TextWrapped = true
+
+roll.MouseButton1Click:Connect(function()
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	local Camera = workspace.CurrentCamera
+
+	local SPEED_MULTIPLIER = 30
+	local JUMP_POWER = 60
+	local JUMP_GAP = 0.3
+
+	local character = game.Players.LocalPlayer.Character
+
+	for i,v in ipairs(character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			v.CanCollide = false
+		end
+	end
+
+	local ball = character.HumanoidRootPart
+	ball.Shape = Enum.PartType.Ball
+	ball.Size = Vector3.new(5,5,5)
+	local humanoid = character:WaitForChild("Humanoid")
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Blacklist
+	params.FilterDescendantsInstances = {character}
+
+	local tc = RunService.RenderStepped:Connect(function(delta)
+		ball.CanCollide = true
+		humanoid.PlatformStand = true
+		if UserInputService:GetFocusedTextBox() then return end
+		if UserInputService:IsKeyDown("W") then
+			ball.RotVelocity -= Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+		end
+		if UserInputService:IsKeyDown("A") then
+			ball.RotVelocity -= Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+		end
+		if UserInputService:IsKeyDown("S") then
+			ball.RotVelocity += Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+		end
+		if UserInputService:IsKeyDown("D") then
+			ball.RotVelocity += Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+		end
+		--ball.RotVelocity = ball.RotVelocity - Vector3.new(0,ball.RotVelocity.Y/50,0)
+	end)
+
+	UserInputService.JumpRequest:Connect(function()
+		local result = workspace:Raycast(
+			ball.Position,
+			Vector3.new(
+				0,
+				-((ball.Size.Y/2)+JUMP_GAP),
+				0
+			),
+			params
+		)
+		if result then
+			ball.Velocity = ball.Velocity + Vector3.new(0,JUMP_POWER,0)
+		end
+	end)
+
+	Camera.CameraSubject = ball
+	humanoid.Died:Connect(function() tc:Disconnect() end)
+end)
+
+emote.Name = "emote"
+emote.Parent = middish
+emote.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+emote.Size = UDim2.new(0, 145, 0, 19)
+emote.Font = Enum.Font.SourceSans
+emote.Text = "R15 Emote Jailbreak"
+emote.TextColor3 = Color3.fromRGB(255, 255, 255)
+emote.TextScaled = true
+emote.TextSize = 14.000
+emote.TextWrapped = true
+
+emote.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Scriptonix-YOUTUBE/Roblox-Emotes/main/Code",true))()
+end)
+
+walls.Name = "walls"
+walls.Parent = middish
+walls.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+walls.Size = UDim2.new(0, 145, 0, 19)
+walls.Font = Enum.Font.SourceSans
+walls.Text = "Walk On Walls"
+walls.TextColor3 = Color3.fromRGB(255, 255, 255)
+walls.TextScaled = true
+walls.TextSize = 14.000
+walls.TextWrapped = true
+
+walls.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Scriptonix-YOUTUBE/not-made-by-me/main/code",true))()
+end)
+
+back.Name = "back"
+back.Parent = middish
+back.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+back.Size = UDim2.new(0, 145, 0, 19)
+back.Font = Enum.Font.SourceSans
+back.Text = "Backdoor.exe"
+back.TextColor3 = Color3.fromRGB(255, 255, 255)
+back.TextScaled = true
+back.TextSize = 14.000
+back.TextWrapped = true
+
+back.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()
+end)
+
+yeet.Name = "yeet"
+yeet.Parent = middish
+yeet.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+yeet.Size = UDim2.new(0, 145, 0, 19)
+yeet.Font = Enum.Font.SourceSans
+yeet.Text = "Yeet GUI"
+yeet.TextColor3 = Color3.fromRGB(255, 255, 255)
+yeet.TextScaled = true
+yeet.TextSize = 14.000
+yeet.TextWrapped = true
+
+yeet.MouseButton1Click:Connect(function()
+	local lp = game:FindService("Players").LocalPlayer
+
+	local function gplr(String)
+		local Found = {}
+		local strl = String:lower()
+		if strl == "all" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				table.insert(Found,v)
+			end
+		elseif strl == "others" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name ~= lp.Name then
+					table.insert(Found,v)
+				end
+			end 
+		elseif strl == "me" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name == lp.Name then
+					table.insert(Found,v)
+				end
+			end 
+		else
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name:lower():sub(1, #String) == String:lower() then
+					table.insert(Found,v)
+				end
+			end 
+		end
+		return Found 
+	end
+
+	local function notif(str,dur)
+		game:FindService("StarterGui"):SetCore("SendNotification", {
+			Title = "yeet gui",
+			Text = str,
+			Icon = "rbxassetid://2005276185",
+			Duration = dur or 3
+		})
+	end
+
+	--// sds
+
+	local h = Instance.new("ScreenGui")
+	local Main = Instance.new("ImageLabel")
+	local Top = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local TextBox = Instance.new("TextBox")
+	local TextButton = Instance.new("TextButton")
+
+	h.Name = "h"
+	h.Parent = game:GetService("CoreGui")
+	h.ResetOnSpawn = false
+
+	Main.Name = "Main"
+	Main.Parent = h
+	Main.Active = true
+	Main.Draggable = true
+	Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.174545452, 0, 0.459574461, 0)
+	Main.Size = UDim2.new(0, 454, 0, 218)
+	Main.Image = "rbxassetid://2005276185"
+
+	Top.Name = "Top"
+	Top.Parent = Main
+	Top.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+	Top.BorderSizePixel = 0
+	Top.Size = UDim2.new(0, 454, 0, 44)
+
+	Title.Name = "Title"
+	Title.Parent = Top
+	Title.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0, 0, 0.295454562, 0)
+	Title.Size = UDim2.new(0, 454, 0, 30)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = "FE Yeet Gui (trollface edition)"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+
+	TextBox.Parent = Main
+	TextBox.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+	TextBox.BorderSizePixel = 0
+	TextBox.Position = UDim2.new(0.0704845786, 0, 0.270642221, 0)
+	TextBox.Size = UDim2.new(0, 388, 0, 62)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.PlaceholderText = "Who do i destroy(can be shortened)"
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.TextScaled = true
+	TextBox.TextSize = 14.000
+	TextBox.TextWrapped = true
+
+	TextButton.Parent = Main
+	TextButton.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+	TextButton.BorderSizePixel = 0
+	TextButton.Position = UDim2.new(0.10352423, 0, 0.596330225, 0)
+	TextButton.Size = UDim2.new(0, 359, 0, 50)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = "Cheese em'"
+	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.TextScaled = true
+	TextButton.TextSize = 14.000
+	TextButton.TextWrapped = true
+
+	TextButton.MouseButton1Click:Connect(function()
+		local Target = gplr(TextBox.Text)
+		if Target[1] then
+			Target = Target[1]
+
+			local Thrust = Instance.new('BodyThrust', lp.Character.HumanoidRootPart)
+			Thrust.Force = Vector3.new(9999,9999,9999)
+			Thrust.Name = "YeetForce"
+			repeat
+				lp.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame
+				Thrust.Location = Target.Character.HumanoidRootPart.Position
+				game:FindService("RunService").Heartbeat:wait()
+			until not Target.Character:FindFirstChild("Head")
+		else
+			notif("Invalid player")
+		end
+	end)
+
+	--//fsddfsdf
+	notif("Loaded successfully! Created by scuba#0001", 5)
+end)
