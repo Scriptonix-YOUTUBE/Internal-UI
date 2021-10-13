@@ -62,10 +62,6 @@ local JoinServer = function(Code)
 	})
 end
 
-function replace_char(pos, str, r)
-	return str:sub(1, pos-1) .. r .. str:sub(pos+1)
-end
-
 krnl.Name = "krnl"
 krnl.Parent = game.CoreGui
 krnl.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -98,8 +94,7 @@ top.Size = UDim2.new(0, 484, 0, 40)
 
 x.Name = "x"
 x.Parent = top
-x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-x.BackgroundTransparency = 1.000
+x.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 x.BorderSizePixel = 0
 x.Position = UDim2.new(0.946280956, 0, 0.075000003, 0)
 x.Size = UDim2.new(0, 26, 0, 26)
@@ -146,8 +141,7 @@ bar.Size = UDim2.new(0, 489, 0, 2)
 
 cred.Name = "cred"
 cred.Parent = top
-cred.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-cred.BackgroundTransparency = 1.000
+cred.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 cred.Position = UDim2.new(0.0599173568, 0, 0.550000012, 0)
 cred.Size = UDim2.new(0, 76, 0, 15)
 cred.Font = Enum.Font.SourceSans
@@ -161,8 +155,7 @@ end)
 
 hot.Name = "hot"
 hot.Parent = top
-hot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-hot.BackgroundTransparency = 1.000
+hot.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 hot.Position = UDim2.new(0.247933894, 0, 0.550000012, 0)
 hot.Size = UDim2.new(0, 76, 0, 15)
 hot.Font = Enum.Font.SourceSans
@@ -281,8 +274,7 @@ topcred.Size = UDim2.new(0, 297, 0, 29)
 
 topx.Name = "topx"
 topx.Parent = topcred
-topx.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-topx.BackgroundTransparency = 1.000
+topx.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 topx.Position = UDim2.new(0.902356863, 0, 0, 0)
 topx.Size = UDim2.new(0, 29, 0, 29)
 topx.Font = Enum.Font.Sarpanch
@@ -393,8 +385,7 @@ topish.Size = UDim2.new(0, 164, 0, 32)
 
 x_2.Name = "x"
 x_2.Parent = topish
-x_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-x_2.BackgroundTransparency = 1.000
+x_2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 x_2.BorderSizePixel = 0
 x_2.Position = UDim2.new(0.793842196, 0, -0.0321426392, 0)
 x_2.Size = UDim2.new(0, 33, 0, 33)
