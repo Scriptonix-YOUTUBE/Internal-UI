@@ -297,6 +297,7 @@ topx.TextColor3 = Color3.fromRGB(255, 255, 255)
 topx.TextScaled = true
 topx.TextSize = 14.000
 topx.TextWrapped = true
+topx.BorderSizePixel = 0
 
 topx.MouseButton1Click:Connect(function()
 	credits.Visible = false
