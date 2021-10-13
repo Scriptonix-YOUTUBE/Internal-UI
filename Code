@@ -63,8 +63,8 @@ local JoinServer = function(Code)
 end
 
 local function fix(x)
-	x=x%80
-	x = x>40 and 40-(x-40) or x
+	x=x%40
+	x = x>20 and 20-(x-20) or x
 	return x
 end
 
@@ -149,6 +149,7 @@ spawn(function()
     while wait() do
        n=n+1
        local i = fix(n)
+       print(i)
        bar.BackgroundColor3 = Color3.fromRGB(41, 116, 255-i)
     end
 end)
