@@ -62,6 +62,12 @@ local JoinServer = function(Code)
 	})
 end
 
+local function fix(x)
+	x=x%80
+	x = x>40 and 40-(x-40) or x
+	return x
+end
+
 krnl.Name = "krnl"
 krnl.Parent = game.CoreGui
 krnl.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -138,6 +144,14 @@ bar.BackgroundColor3 = Color3.fromRGB(41, 116, 255)
 bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0.00413223123, 0, 0, 0)
 bar.Size = UDim2.new(0, 489, 0, 2)
+spawn(function()
+    local n = 0
+    while wait() do
+       n=n+1
+       local i = fix(n)
+       bar.BackgroundColor3 = Color3.fromRGB(41+n, 116+n, 255+n)
+    end
+end)
 
 cred.Name = "cred"
 cred.Parent = top
