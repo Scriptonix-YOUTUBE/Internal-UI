@@ -67,7 +67,7 @@ function replace_char(pos, str, r)
 end
 
 krnl.Name = "krnl"
-krnl.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+krnl.Parent = game.CoreGui
 krnl.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 krnl.ResetOnSpawn = false
 
