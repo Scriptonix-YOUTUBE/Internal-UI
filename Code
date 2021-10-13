@@ -149,7 +149,7 @@ spawn(function()
     while wait() do
        n=n+1
        local i = fix(n)
-       bar.BackgroundColor3 = Color3.fromRGB(41-n, 116-n, 255-n)
+       bar.BackgroundColor3 = Color3.fromRGB(41, 116, 255-n)
     end
 end)
 
