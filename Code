@@ -698,14 +698,14 @@ walls.Parent = middish
 walls.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 walls.Size = UDim2.new(0, 145, 0, 19)
 walls.Font = Enum.Font.SourceSans
-walls.Text = "Walk On Walls"
+walls.Text = "FE Fly (Ctrl+E)"
 walls.TextColor3 = Color3.fromRGB(255, 255, 255)
 walls.TextScaled = true
 walls.TextSize = 14.000
 walls.TextWrapped = true
 
 walls.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Scriptonix-YOUTUBE/not-made-by-me/main/code",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Scriptonix-YOUTUBE/Fly/main/code",true))()
 end)
 
 back.Name = "back"
