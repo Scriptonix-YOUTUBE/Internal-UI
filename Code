@@ -212,14 +212,7 @@ execution.TextSize = 14.000
 execution.TextWrapped = true
 execution.TextXAlignment = Enum.TextXAlignment.Left
 execution.TextYAlignment = Enum.TextYAlignment.Top
-
-execution.FocusLost:Connect(function(inp)
-	if inp then
-		execution.Text = execution.Text .. '\n'
-		execution:ReleaseFocus()
-		execution:CaptureFocus()
-	end
-end)
+execution.MultiLine = true
 
 bottom.Name = "bottom"
 bottom.Parent = main
