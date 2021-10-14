@@ -162,6 +162,7 @@ cred.Font = Enum.Font.SourceSans
 cred.Text = "Credits"
 cred.TextColor3 = Color3.fromRGB(255, 255, 255)
 cred.TextSize = 14.000
+cred.BorderSizePixel = 0
 
 cred.MouseButton1Click:Connect(function()
 	credits.Visible = true
